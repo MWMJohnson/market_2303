@@ -30,7 +30,7 @@ RSpec.describe Market do
   end
 
   describe "#add_vendor(vendor)" do
-    it "can add a vendor" do
+    it " can add a vendor" do
       @vendor1.stock(@item1, 35)
       @vendor1.stock(@item2, 7)
       @vendor2.stock(@item4, 50)
@@ -46,7 +46,7 @@ RSpec.describe Market do
   end
 
   describe "#vendor_names" do
-    it "can create a list of all the vendor names" do
+    it " can create a list of all the vendor names" do
       @vendor1.stock(@item1, 35)
       @vendor1.stock(@item2, 7)
       @vendor2.stock(@item4, 50)
@@ -62,7 +62,7 @@ RSpec.describe Market do
   end
 
   describe "#vendors_that_sell(item)" do
-    it "can create a list of all the vendor names" do
+    it " can create a list of all the vendor names" do
       @vendor1.stock(@item1, 35)
       @vendor1.stock(@item2, 7)
       @vendor2.stock(@item4, 50)
@@ -75,10 +75,11 @@ RSpec.describe Market do
 
       expect(@market.vendors_that_sell(@item1)).to eq([@vendor1, @vendor3])
       expect(@market.vendors_that_sell(@item4)).to eq([@vendor2])
+
+      expect(@vendor1.potential_revenue).to eq(29.75)
+      expect(@vendor2.potential_revenue).to eq(345.00)
+      expect(@vendor3.potential_revenue).to eq(48.75)
     end
   end
-
-  
-
 
 end
