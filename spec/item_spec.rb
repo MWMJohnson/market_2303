@@ -10,12 +10,12 @@ RSpec.describe Item do
   end
 
   describe "#initialize(attributes)" do 
-    it "exists" do 
+    it " exists" do 
       expect(@item1).to be_a(Item)
       expect(@item2).to be_a(Item)
     end
 
-    it "has readable attributes" do 
+    it " has readable attributes" do 
       expect(@item1.name).to eq("Peach")
       expect(@item2.name).to eq("Tomato")
 
