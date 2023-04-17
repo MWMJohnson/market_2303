@@ -23,4 +23,14 @@ class Market
     end
   end
 
+  def sorted_item_list
+    items_list = @vendors.flat_map do |vendor|
+      vendor.inventory.keys
+    end
+    items_list_names = items_list.map do |item|
+      item.name
+    end
+    solo_items_list = items_list_names.uniq.sort
+  end
+
 end
