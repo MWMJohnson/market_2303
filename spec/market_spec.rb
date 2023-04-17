@@ -98,27 +98,27 @@ RSpec.describe Market do
     end
   end
 
-  # describe "#total_inventory" do
-  #   it " can show the amout available of each item in stock and which vendor sells it" do
-  #     @vendor1.stock(@item1, 35)
-  #     @vendor1.stock(@item2, 7)
-  #     @vendor2.stock(@item4, 50)
-  #     @vendor2.stock(@item3, 25)
-  #     @vendor3.stock(@item1, 65)
+  describe "#total_inventory" do
+    it " can show the amout available of each item in stock and which vendor sells it" do
+      @vendor1.stock(@item1, 35)
+      @vendor1.stock(@item2, 7)
+      @vendor2.stock(@item4, 50)
+      @vendor2.stock(@item3, 25)
+      @vendor3.stock(@item1, 65)
 
-  #     @market.add_vendor(@vendor1)    
-  #     @market.add_vendor(@vendor2)    
-  #     @market.add_vendor(@vendor3)
+      @market.add_vendor(@vendor1)    
+      @market.add_vendor(@vendor2)    
+      @market.add_vendor(@vendor3)
 
-  #     expect(@market.total_inventory).to eq({
-  #       @item1 => {quantity: 90, vendors: [@vendor1, @vendor3]},
-  #       @item2 => {quantity: 7, vendors: [@vendor1]},
-  #       @item3 => {quantity: 25, vendors: [@vendor2]},
-  #       @item4 => {quantity: 50, vendors: [@vendor2]}
-  #     })
+      expect(@market.total_inventory).to eq({
+        @item1 => {quantity: 90, vendors: [@vendor1, @vendor3]},
+        @item2 => {quantity: 7, vendors: [@vendor1]},
+        @item3 => {quantity: 25, vendors: [@vendor2]},
+        @item4 => {quantity: 50, vendors: [@vendor2]}
+      })
 
-  #   end
-  # end
+    end
+  end
 
 
 
