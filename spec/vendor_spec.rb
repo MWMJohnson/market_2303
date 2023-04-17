@@ -7,6 +7,7 @@ RSpec.describe Vendor do
   before(:each) do 
     @item1 = Item.new({name: 'Peach', price: "$0.75"})
     @item2 = Item.new({name: 'Tomato', price: '$0.50'})
+
     @vendor = Vendor.new("Rocky Mountain Fresh")
   end
 
@@ -39,6 +40,15 @@ RSpec.describe Vendor do
 
       @vendor.stock(@item2, 12)
       expect(@vendor.inventory).to eq({@item1 => 55, @item2 => 12})
+    end
+  end
+
+  describe "#potential_revenue" do
+    it " can calculate a potential revenue for each vendor" do
+      @vendor.stock(@item1, 100)
+      @vendor.stock(@item2, 10)
+    
+      expect(@vendor.potential_revenue).to eq(80.00)
     end
   end
 
